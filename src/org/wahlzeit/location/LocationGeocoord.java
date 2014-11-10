@@ -1,5 +1,8 @@
 package org.wahlzeit.location;
 
+/**
+ * @author Dmitry Gorelenkov
+ */
 public final class LocationGeocoord extends AbstractLocation {
 	final int latitude;
 	final int longitude;
@@ -14,11 +17,17 @@ public final class LocationGeocoord extends AbstractLocation {
 		this.longitude = lon;
 	}
 	
+	/**
+	 * @see org.wahlzeit.location.Location#asString()
+	 */
 	@Override
 	public String asString() {
 		return "lat: " + latitude + ", lon: " + longitude;
 	}
-
+	
+	/**
+	 * @see org.wahlzeit.location.Location#isEqual(Location)
+	 */
 	@Override
 	public boolean isEqual(Location obj) {
 		if (this == obj)
@@ -34,11 +43,19 @@ public final class LocationGeocoord extends AbstractLocation {
 			return false;
 		return true;
 	}
-
+	
+	/**
+	 * @methodtype get
+	 * @return latitude
+	 */
 	public int getLatitude() {
 		return latitude;
 	}
-
+	
+	/**
+	 * @methodtype get
+	 * @return longitude
+	 */
 	public int getLongitude() {
 		return longitude;
 	}

@@ -1,5 +1,8 @@
 package org.wahlzeit.location;
 
+/**
+ * @author Dmitry Gorelenkov
+ */
 public final class Location3d extends AbstractLocation {
 	final int x;
 	final int y;
@@ -10,6 +13,7 @@ public final class Location3d extends AbstractLocation {
 	 * @param x
 	 * @param y
 	 * @param z
+	 * @methodtype constructor
 	 */
 	public Location3d(int x, int y, int z) {
 		this.x = x;
@@ -17,11 +21,17 @@ public final class Location3d extends AbstractLocation {
 		this.z = z;
 	}
 
+	/**
+	 * @see org.wahlzeit.location.Location#asString()
+	 */
 	@Override
 	public String asString() {
 		return "[x: " + x + ", y: " + y + ", z: " + z + "]";
 	}
-
+	
+	/**
+	 * @see org.wahlzeit.location.Location#isEqual()
+	 */
 	@Override
 	public boolean isEqual(Location loc) {
 		if (this == loc)
@@ -39,15 +49,27 @@ public final class Location3d extends AbstractLocation {
 			return false;
 		return true;
 	}
-
+	
+	/**
+	 * @methodtype get
+	 * @return x
+	 */
 	public int getX() {
 		return x;
 	}
-
+	
+	/**
+	 * @methodtype get
+	 * @return y
+	 */
 	public int getY() {
 		return y;
 	}
-
+	
+	/**
+	 * @methodtype get
+	 * @return z
+	 */
 	public int getZ() {
 		return z;
 	}

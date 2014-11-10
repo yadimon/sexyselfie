@@ -5,6 +5,15 @@ package org.wahlzeit.location;
  *
  */
 public interface Location {
+	/**
+	 * represents the location as string
+	 * @methodtype conversion
+	 */
 	public String asString();
+	
+	/**
+	 * tests if the location is equal to other location
+	 * @methodtype boolean-query
+	 */
 	public boolean isEqual(Location loc);
 }
