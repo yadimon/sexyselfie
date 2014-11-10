@@ -1,0 +1,55 @@
+package org.wahlzeit.location;
+
+public final class Location3d extends AbstractLocation {
+	final int x;
+	final int y;
+	final int z;
+	
+	/**
+	 * Location by x, y , z coordinates
+	 * @param x
+	 * @param y
+	 * @param z
+	 */
+	public Location3d(int x, int y, int z) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+
+	@Override
+	public String asString() {
+		return "[x: " + x + ", y: " + y + ", z: " + z + "]";
+	}
+
+	@Override
+	public boolean isEqual(Location loc) {
+		if (this == loc)
+			return true;
+		if (loc == null)
+			return false;
+		if (getClass() != loc.getClass())
+			return false;
+		Location3d other = (Location3d) loc;
+		if (x != other.x)
+			return false;
+		if (y != other.y)
+			return false;
+		if (z != other.z)
+			return false;
+		return true;
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public int getZ() {
+		return z;
+	}
+
+}
