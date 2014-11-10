@@ -23,6 +23,7 @@ package org.wahlzeit.model;
 import java.sql.*;
 import java.net.*;
 
+import org.wahlzeit.location.Location;
 import org.wahlzeit.services.*;
 import org.wahlzeit.utils.*;
 
@@ -107,6 +108,8 @@ public class Photo extends DataObject {
 	 */
 	protected long creationTime = System.currentTimeMillis();
 	
+	protected Location location;
+
 	/**
 	 * 
 	 */
@@ -479,6 +482,22 @@ public class Photo extends DataObject {
 	 */
 	public long getCreationTime() {
 		return creationTime;
+	}
+	
+	/**
+	 * @param location the location to set
+	 * @methodtype set
+	 */
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+	
+	/**
+	 * @return the location
+	 * @methodtype get
+	 */
+	public Location getLocation() {
+		return location;
 	}
 	
 }
