@@ -25,6 +25,7 @@ import java.sql.*;
 import java.util.*;
 
 import org.wahlzeit.main.*;
+import org.wahlzeit.model.sexyselfie.SexyselfiePhoto;
 import org.wahlzeit.services.*;
 
 /**
@@ -349,6 +350,17 @@ public class PhotoManager extends ObjectManager {
 		Photo result = PhotoUtil.createPhoto(file, id);
 		addPhoto(result);
 		return result;
+	}
+	
+	/**
+	 * creates and returns photo in format of SexyselfiePhoto
+	 * @see {@link PhotoManager#createPhoto(File)}
+	 * @param file source
+	 * @return SexyselfiePhoto
+	 * @throws Exception
+	 */
+	public SexyselfiePhoto createSexyselfiePhoto(File file) throws Exception {
+		return new SexyselfiePhoto(this.createPhoto(file));
 	}
 	
 	/**
